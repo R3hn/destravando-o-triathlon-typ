@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Mail } from "lucide-react";
 import Link from 'next/link';
+import Image from "next/image";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { CountdownTimer } from "@/components/countdown-timer";
 
@@ -17,7 +18,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <CheckCircle className="w-20 h-20 text-primary animate-pulse" />
               <div className="space-y-2">
-                <h1 className="text-4xl pt-4 font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-red-400">
+                <h1 className="text-4xl pt-8 font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-red-400">
                   SUA VAGA ESTÁ QUASE CONFIRMADA!
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
@@ -59,15 +60,17 @@ export default function Home() {
         </section>
 
         <section className="w-full pt-6 pb-12 md:pt-12 md:pb-24 bg-card">
-          <div className="container flex flex-col items-center gap-8 px-4 md:px-6">
+          <div className="container flex flex-col items-center gap-4 px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center">O evento começa em:</h2>
             <CountdownTimer targetDate={eventDate.toISOString()} />
           </div>
         </section>
       </main>
 
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center justify-center px-4 md:px-6 border-t border-border">
-        <p className="text-xs text-muted-foreground">&copy; 2025 Destravando o Triathlon. Todos os direitos reservados.</p>
+      <footer className="flex flex-col gap-4 py-8 w-full shrink-0 items-center justify-center px-4 md:px-6 border-t border-border text-center">
+        <Image src="/Logo.png" alt="Destravando o Triathlon" width={200} height={50} className="mb-2" />
+        <p className="text-base text-muted-foreground italic">"Você não precisa ser atleta para destravar sua nova versão."</p>
+        <p className="text-xs text-muted-foreground mt-2">&copy; 2025 Destravando o Triathlon. Todos os direitos reservados.</p>
       </footer>
     </div>
   );
