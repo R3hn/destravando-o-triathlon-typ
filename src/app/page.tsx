@@ -31,8 +31,8 @@ export default function Home() {
 
         <section className="w-full pb-12 md:pb-24">
           <div className="container px-4 md:px-6">
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
+              <div className="bg-card rounded-lg p-8 h-full flex-col items-center text-center md:order-1 order-2 hidden md:flex">
                 <Mail className="w-16 h-16 text-primary mb-4" />
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Confirme sua inscrição no e-mail</h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg mb-4">
@@ -42,7 +42,7 @@ export default function Home() {
                   PS: Caso não encontre o e-mail, procure na sua caixa de lixo eletrônico, spam ou aguarde alguns minutos e verifique novamente.
                 </p>
               </div>
-              <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center">
+              <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center md:order-2 order-1">
                 <WhatsappIcon className="w-16 h-16 text-primary mb-4" />
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Entre no Grupo VIP</h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg mb-6">
@@ -54,6 +54,16 @@ export default function Home() {
                     ENTRAR NO GRUPO
                   </Link>
                 </Button>
+              </div>
+              <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center md:order-1 order-2 md:hidden">
+                <Mail className="w-16 h-16 text-primary mb-4" />
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Confirme sua inscrição no e-mail</h2>
+                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg mb-4">
+                  Enviamos um e-mail com o link de acesso exclusivo para o evento. É crucial que você o localize e confirme sua presença para não perder nenhum detalhe.
+                </p>
+                <p className="text-xs text-muted-foreground/80">
+                  PS: Caso não encontre o e-mail, procure na sua caixa de lixo eletrônico, spam ou aguarde alguns minutos e verifique novamente.
+                </p>
               </div>
             </div>
           </div>
