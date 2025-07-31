@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { CheckCircle, Star } from "lucide-react";
+import { CheckCircle, Mail, Star } from "lucide-react";
 import Image from "next/image";
 import Link from 'next/link';
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
@@ -59,6 +59,20 @@ export default function Home() {
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Parabéns! Você deu o primeiro passo para transformar sua carreira. Agora, um passo importante te aguarda.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full pb-12 md:pb-24">
+          <div className="container px-4 md:px-6">
+            <div className="bg-card rounded-lg p-8 md:p-12">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <Mail className="w-16 h-16 text-primary" />
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">1. Acesse seu e-mail</h2>
+                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
+                  Acesse a caixa de entrada do seu e-mail e confirme sua inscrição no Workshop Produção sem Complicação.
                 </p>
               </div>
             </div>
