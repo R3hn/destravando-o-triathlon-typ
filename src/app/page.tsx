@@ -58,7 +58,7 @@ export default function Home() {
                   SUA VAGA ESTÁ QUASE CONFIRMADA!
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Parabéns! Você deu o primeiro passo para transformar sua carreira. Agora, um passo importante te aguarda.
+                  Parabéns! Você deu o primeiro passo para transformar sua jornada no Triathlon. Agora, dois passos importantes te aguardam
                 </p>
               </div>
             </div>
