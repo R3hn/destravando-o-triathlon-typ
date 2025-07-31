@@ -1,51 +1,14 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { CheckCircle, Mail, Star } from "lucide-react";
-import Image from "next/image";
+import { CheckCircle, Mail } from "lucide-react";
 import Link from 'next/link';
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
+import { CountdownTimer } from "@/components/countdown-timer";
 
-
-const testimonials = [
-  {
-    name: "Ana Silva",
-    role: "Empreendedora Digital",
-    testimonial: "Este evento abriu minha mente para novas possibilidades. A energia e o conteúdo foram incríveis, saí de lá com um plano de ação claro!",
-    avatar: "https://placehold.co/100x100.png",
-    hint: "woman portrait"
-  },
-  {
-    name: "Carlos Pereira",
-    role: "Desenvolvedor de Software",
-    testimonial: "Uma das melhores experiências de networking que já tive. Conectei-me com profissionais fantásticos e aprendi muito. Recomendo fortemente.",
-    avatar: "https://placehold.co/100x100.png",
-    hint: "man portrait"
-  },
-  {
-    name: "Juliana Costa",
-    role: "Gerente de Marketing",
-    testimonial: "O conteúdo foi prático, direto ao ponto e extremamente relevante para os desafios atuais do mercado. Voltei para a empresa cheia de ideias.",
-    avatar: "https://placehold.co/100x100.png",
-    hint: "woman smiling"
-  },
-  {
-    name: "Rafael Martins",
-    role: "Consultor de Negócios",
-    testimonial: "Organização impecável e palestrantes de altíssimo nível. Um evento que realmente entrega valor e transforma perspectivas.",
-    avatar: "https://placehold.co/100x100.png",
-    hint: "man professional"
-  }
-];
 
 export default function Home() {
+  const eventDate = new Date();
+  eventDate.setDate(eventDate.getDate() + 7);
+
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body">
       <main className="flex-1">
@@ -96,55 +59,9 @@ export default function Home() {
         </section>
 
         <section className="w-full py-12 md:py-24 bg-card">
-          <div className="container flex flex-col items-center gap-12 px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">O que dizem sobre o evento</h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Veja o que os participantes das edições anteriores têm a dizer.
-              </p>
-            </div>
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
-            >
-              <CarouselContent>
-                {testimonials.map((item, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <div className="p-1 h-full">
-                      <Card className="flex flex-col justify-between h-full bg-card border-border/50 hover:border-primary/50 transition-colors duration-300">
-                        <CardContent className="p-6 flex flex-col items-start text-left gap-4">
-                           <div className="flex text-primary">
-                              <Star className="fill-primary" />
-                              <Star className="fill-primary" />
-                              <Star className="fill-primary" />
-                              <Star className="fill-primary" />
-                              <Star className="fill-primary" />
-                          </div>
-                          <blockquote className="text-lg font-normal text-foreground">
-                            "{item.testimonial}"
-                          </blockquote>
-                        </CardContent>
-                        <CardHeader className="p-6 pt-0 flex flex-row items-center gap-4">
-                          <Avatar>
-                            <AvatarImage src={item.avatar} data-ai-hint={item.hint} alt={item.name} />
-                            <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
-                          </Avatar>
-                          <div className="grid gap-0.5 text-left">
-                            <p className="text-sm font-semibold text-foreground">{item.name}</p>
-                            <p className="text-xs text-muted-foreground">{item.role}</p>
-                          </div>
-                        </CardHeader>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
-            </Carousel>
+          <div className="container flex flex-col items-center gap-8 px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center">O evento começa em:</h2>
+            <CountdownTimer targetDate={eventDate.toISOString()} />
           </div>
         </section>
       </main>
