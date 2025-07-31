@@ -58,7 +58,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-card">
+        <section className="w-full pt-6 pb-12 md:pt-12 md:pb-24 bg-card">
           <div className="container flex flex-col items-center gap-8 px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center">O evento começa em:</h2>
             <CountdownTimer targetDate={eventDate.toISOString()} />
