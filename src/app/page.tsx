@@ -67,38 +67,32 @@ export default function Home() {
 
         <section className="w-full pb-12 md:pb-24">
           <div className="container px-4 md:px-6">
-            <div className="bg-card rounded-lg p-8 md:p-12">
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <Mail className="w-16 h-16 text-primary" />
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">1. Acesse seu e-mail</h2>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center">
+                <Mail className="w-16 h-16 text-primary mb-4" />
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">1. Acesse seu e-mail</h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
-                  Acesse a caixa de entrada do seu e-mail e confirme sua inscrição no Workshop Produção sem Complicação.
+                  Enviamos um e-mail com a confirmação e os detalhes para você acessar o evento.
                 </p>
+              </div>
+              <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center">
+                <WhatsappIcon className="w-16 h-16 text-primary mb-4" />
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">2. Entre no Grupo VIP</h2>
+                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg mb-6">
+                  Não perca nenhuma informação! No grupo exclusivo, enviaremos todos os avisos e materiais.
+                </p>
+                <Button asChild size="lg" className="font-bold text-lg py-8 px-10 shadow-[0_0_20px_theme(colors.primary)] hover:shadow-[0_0_30px_theme(colors.primary)] transition-shadow duration-300 mt-auto">
+                  <Link href="#" target="_blank">
+                    <WhatsappIcon className="mr-3 h-7 w-7" />
+                    ENTRAR NO GRUPO
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
         <section className="w-full py-12 md:py-24 bg-card">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-6 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Passo Importante: Entre no Grupo VIP</h2>
-                <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
-                  Não perca nenhuma informação! No grupo exclusivo do WhatsApp, enviaremos todos os avisos, links de acesso, materiais complementares e oportunidades de networking.
-                </p>
-              </div>
-              <Button asChild size="lg" className="font-bold text-lg py-8 px-10 shadow-[0_0_20px_theme(colors.primary)] hover:shadow-[0_0_30px_theme(colors.primary)] transition-shadow duration-300">
-                <Link href="#" target="_blank">
-                  <WhatsappIcon className="mr-3 h-7 w-7" />
-                  ENTRAR NO GRUPO DO WHATSAPP
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-12 md:py-24">
           <div className="container flex flex-col items-center gap-12 px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">O que dizem sobre o evento</h2>
