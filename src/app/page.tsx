@@ -70,14 +70,14 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center">
                 <Mail className="w-16 h-16 text-primary mb-4" />
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">1. Acesse seu e-mail</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Acesse seu e-mail</h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg">
                   Enviamos um e-mail com a confirmação e os detalhes para você acessar o evento.
                 </p>
               </div>
               <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center">
                 <WhatsappIcon className="w-16 h-16 text-primary mb-4" />
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">2. Entre no Grupo VIP</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Entre no Grupo VIP</h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg mb-6">
                   Não perca nenhuma informação! No grupo exclusivo, enviaremos todos os avisos e materiais.
                 </p>
