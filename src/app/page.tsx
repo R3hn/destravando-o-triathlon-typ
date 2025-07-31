@@ -69,7 +69,6 @@ export default function Home() {
 
       <footer className="flex flex-col gap-4 py-8 w-full shrink-0 items-center justify-center px-4 md:px-6 border-t border-border text-center">
         <Image src="/Logo.png" alt="Destravando o Triathlon" width={200} height={50} className="mb-2" />
-        <p className="text-base text-muted-foreground italic">"Você não precisa ser atleta para destravar sua nova versão."</p>
         <p className="text-xs text-muted-foreground mt-2">&copy; 2025 Destravando o Triathlon. Todos os direitos reservados.</p>
       </footer>
     </div>
