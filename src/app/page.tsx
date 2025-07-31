@@ -55,7 +55,7 @@ export default function Home() {
               <CheckCircle className="w-20 h-20 text-primary animate-pulse" />
               <div className="space-y-2">
                 <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-red-400">
-                  SUA VAGA ESTÁ CONFIRMADA!
+                  SUA VAGA ESTÁ QUASE CONFIRMADA!
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Parabéns! Você deu o primeiro passo para transformar sua carreira. Agora, um passo importante te aguarda.
