@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh bg-background font-body">
       <main className="flex-1">
         <section className="w-full py-6 md:py-8 lg:py-10">
-          <div className="container px-4 md:px-6">
+          <div className="container px-6 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-4xl pt-8 font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-red-400">
@@ -28,7 +28,7 @@ export default function Home() {
         </section>
 
         <section className="w-full pb-12 md:pb-24">
-          <div className="container px-4 md:px-6">
+          <div className="container px-6 md:px-6">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
               <div className="bg-card rounded-lg p-8 h-full flex-col items-center text-center md:order-1 order-2 hidden md:flex">
                 <Mail className="w-16 h-16 text-primary mb-4" />
@@ -68,7 +68,7 @@ export default function Home() {
         </section>
 
         <section className="w-full pt-6 pb-12 md:pt-12 md:pb-24 bg-card">
-          <div className="container flex flex-col items-center gap-4 px-4 md:px-6">
+          <div className="container flex flex-col items-center gap-4 px-6 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center">O evento começa em:</h2>
             <CountdownTimer targetDate={eventDate.toISOString()} />
           </div>
