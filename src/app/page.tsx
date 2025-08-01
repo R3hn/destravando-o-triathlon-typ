@@ -7,8 +7,7 @@ import { CountdownTimer } from "@/components/countdown-timer";
 
 
 export default function Home() {
-  const eventDate = new Date();
-  eventDate.setDate(eventDate.getDate() + 7);
+  const eventDate = new Date("2024-08-14T20:00:00");
 
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body">
