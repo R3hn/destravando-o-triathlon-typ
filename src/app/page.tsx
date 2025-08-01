@@ -27,7 +27,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full pb-12 md:pb-24">
+        <section className="w-full pb-12 md:pb-24 pt-8">
           <div className="container px-6 md:px-6">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 items-start">
               <div className="bg-card rounded-lg p-8 h-full flex-col items-center text-center md:order-1 order-2 hidden md:flex">
