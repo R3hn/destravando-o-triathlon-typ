@@ -6,6 +6,9 @@ import Script from 'next/script';
 export const metadata: Metadata = {
   title: 'DOT Página de Obrigado',
   description: 'Sua vaga está confirmada! Entre no grupo para receber todas as informações.',
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function RootLayout({
