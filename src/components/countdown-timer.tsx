@@ -32,30 +32,51 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // This effect runs only once on the client after the component mounts.
     setIsClient(true);
+    setTimeLeft(calculateTimeLeft());
   }, []);
 
   useEffect(() => {
+    // This effect runs only on the client.
     if (!isClient) {
       return;
     }
-
-    // Run on client side
-    setTimeLeft(calculateTimeLeft());
 
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate, isClient]);
+  }, [isClient, targetDate]);
 
   const formatTime = (time: number) => {
-    return time < 10 ? `0${time}` : time;
+    return time < 10 ? `0${time}` : String(time);
   };
+  
+  const renderSkeletons = () => (
+    <div className="flex items-center justify-center space-x-2 md:space-x-4">
+      <div className="text-center p-4 md:p-6 bg-primary/80 rounded-lg w-24 md:w-32">
+        <div className="text-4xl md:text-6xl font-black text-background">--</div>
+        <div className="text-sm md:text-base font-medium text-background/80">DIAS</div>
+      </div>
+      <div className="text-center p-4 md:p-6 bg-primary/80 rounded-lg w-24 md:w-32">
+        <div className="text-4xl md:text-6xl font-black text-background">--</div>
+        <div className="text-sm md:text-base font-medium text-background/80">HORAS</div>
+      </div>
+      <div className="text-center p-4 md:p-6 bg-primary/80 rounded-lg w-24 md:w-32">
+        <div className="text-4xl md:text-6xl font-black text-background">--</div>
+        <div className="text-sm md:text-base font-medium text-background/80">MINUTOS</div>
+      </div>
+      <div className="text-center p-4 md:p-6 bg-primary/80 rounded-lg w-24 md:w-32">
+        <div className="text-4xl md:text-6xl font-black text-background">--</div>
+        <div className="text-sm md:text-base font-medium text-background/80">SEGUNDOS</div>
+      </div>
+    </div>
+  );
 
   if (!isClient) {
-    return null; // Or a loading skeleton
+    return renderSkeletons();
   }
 
   return (
