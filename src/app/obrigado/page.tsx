@@ -3,13 +3,8 @@ import { Mail } from "lucide-react";
 import Link from 'next/link';
 import Image from "next/image";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
-import { CountdownTimer } from "@/components/countdown-timer";
-
 
 export default function Obrigado() {
-  const eventDate = new Date("2024-08-14T20:00:00-03:00");
-  const eventTimestamp = eventDate.getTime();
-
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body">
       <main className="flex-1">
@@ -65,13 +60,6 @@ export default function Obrigado() {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="w-full pt-6 pb-12 md:pt-12 md:pb-24 bg-card">
-          <div className="container flex flex-col items-center gap-4 px-6 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-center">O evento começa em:</h2>
-            <CountdownTimer targetTimestamp={eventTimestamp} />
           </div>
         </section>
       </main>
