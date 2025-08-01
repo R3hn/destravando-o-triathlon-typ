@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 interface CountdownTimerProps {
-  targetDate: string;
+  targetTimestamp: number;
 }
 
 const CountdownSkeleton = () => (
@@ -27,9 +27,9 @@ const CountdownSkeleton = () => (
   </div>
 );
 
-const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
+const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetTimestamp }) => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(targetDate) - +new Date();
+    const difference = targetTimestamp - new Date().getTime();
     if (difference > 0) {
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -56,7 +56,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [targetTimestamp]);
 
   const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : String(time);
