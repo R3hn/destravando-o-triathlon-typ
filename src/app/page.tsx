@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-16 lg:py-20">
+        <section className="w-full py-6 md:py-8 lg:py-10">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
@@ -43,7 +43,7 @@ export default function Home() {
               </div>
               <div className="bg-card rounded-lg p-8 h-full flex flex-col items-center text-center md:order-2 order-1">
                 <WhatsappIcon className="w-16 h-16 text-primary mb-4" />
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Entre no Grupo VIP</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline mb-2">Entre no Grupo VIP do WhatsApp</h2>
                 <p className="mx-auto max-w-[600px] text-muted-foreground md:text-lg mb-6">
                   Não perca nenhuma informação! No grupo exclusivo, enviaremos todos os avisos e materiais para você decolar sua carreira.
                 </p>
