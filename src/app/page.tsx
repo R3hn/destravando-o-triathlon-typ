@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from 'next/link';
 import Image from "next/image";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
@@ -16,7 +16,6 @@ export default function Home() {
         <section className="w-full py-20 md:py-28 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
-              <CheckCircle className="w-20 h-20 text-primary animate-pulse" />
               <div className="space-y-2">
                 <h1 className="text-4xl pt-8 font-black tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-red-400">
                   SUA VAGA ESTÁ QUASE CONFIRMADA!
