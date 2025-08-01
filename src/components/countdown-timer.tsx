@@ -7,61 +7,39 @@ interface CountdownTimerProps {
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
-  // State to hold the calculated time left
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  // State to track whether the component has mounted on the client
-  const [hasMounted, setHasMounted] = useState(false);
-
-  // Effect to set hasMounted to true after the initial render on the client
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  // Effect to calculate and update the countdown every second
-  useEffect(() => {
-    // Only run this effect on the client
-    if (!hasMounted) {
-      return;
+  const calculateTimeLeft = () => {
+    const difference = +new Date(targetDate) - +new Date();
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
     }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  };
 
-    const calculateTimeLeft = () => {
-      const difference = +new Date(targetDate) - +new Date();
-      if (difference > 0) {
-        return {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        };
-      }
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    };
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isClient, setIsClient] = useState(false);
 
-    // Set the initial time left
+  useEffect(() => {
+    setIsClient(true);
+    // Set initial time immediately on the client
     setTimeLeft(calculateTimeLeft());
 
-    // Set up the interval to update the timer every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    // Clean up the interval on component unmount
     return () => clearInterval(timer);
-  }, [hasMounted, targetDate]);
+  }, [targetDate]);
 
   const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : String(time);
   };
-  
-  // Render loading skeletons if the component hasn't mounted on the client yet
-  // This prevents hydration mismatch errors.
-  if (!hasMounted) {
+
+  if (!isClient) {
     return (
       <div className="flex items-center justify-center space-x-2 md:space-x-4">
         <div className="text-center p-4 md:p-6 bg-primary/80 rounded-lg w-24 md:w-32">
@@ -84,7 +62,6 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     );
   }
 
-  // Render the actual countdown timer once mounted on the client
   return (
     <div className="flex items-center justify-center space-x-2 md:space-x-4">
       <div className="text-center p-4 md:p-6 bg-primary/80 rounded-lg w-24 md:w-32">
