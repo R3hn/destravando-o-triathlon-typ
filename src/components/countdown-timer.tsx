@@ -29,8 +29,17 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   };
 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+
     // Run on client side
     setTimeLeft(calculateTimeLeft());
 
@@ -39,11 +48,15 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [targetDate, isClient]);
 
   const formatTime = (time: number) => {
     return time < 10 ? `0${time}` : time;
   };
+
+  if (!isClient) {
+    return null; // Or a loading skeleton
+  }
 
   return (
     <div className="flex items-center justify-center space-x-2 md:space-x-4">
