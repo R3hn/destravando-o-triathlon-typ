@@ -47,7 +47,7 @@ export default function Home() {
                   Não perca nenhuma informação! No grupo exclusivo, enviaremos todos os avisos e materiais para você decolar sua carreira.
                 </p>
                 <Button asChild size="lg" className="font-bold text-lg py-8 px-10 shadow-[0_0_20px_theme(colors.primary)] hover:shadow-[0_0_30px_theme(colors.primary)] transition-shadow duration-300 mt-auto">
-                  <Link href="#" target="_blank">
+                  <Link href="https://chat.whatsapp.com/KyIufyaRxyu90KsgpVfkC2?mode=ac_t" target="_blank">
                     <WhatsappIcon className="mr-3 h-7 w-7" />
                     ENTRAR NO GRUPO
                   </Link>
